@@ -1,1 +1,3 @@
-# html-widget
+yarn install
+
+yarn dev
