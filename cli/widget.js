@@ -22,7 +22,7 @@ class MessageWidget {
         /**
          * Create and append a div element to the document body
          */
-        // const container = document.createElement("div");
+        const container = document.createElement("div");
         // container.style.position = "fixed";
         // Object.keys(this.position).forEach(
         //     (key) => (container.style[key] = this.position[key])
