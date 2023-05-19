@@ -61,8 +61,8 @@ class MessageWidget {
         /**
          * Create a container for the widget and add the following classes:- `widget__hidden`, `widget__container`
          */
-        // this.widgetContainer = document.createElement("div");
-        // this.widgetContainer.classList.add("widget__hidden", "widget__container");
+        this.widgetContainer = document.createElement("div");
+        this.widgetContainer.classList.add("widget__hidden", "widget__container");
 
         /**
          * Invoke the `createWidget()` method
@@ -72,7 +72,7 @@ class MessageWidget {
         /**
          * Append the widget's content and the button to the container
          */
-        // container.appendChild(this.widgetContainer);
+        container.appendChild(this.widgetContainer);
         // container.appendChild(buttonContainer);
     }
 
