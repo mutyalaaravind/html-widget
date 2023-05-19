@@ -1,0 +1,42 @@
+<!-- widget.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Embeddable Widget</title>
+    <style>
+        /* Add your widget styles here */
+        .widget {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="widget">
+        <h1>Embeddable Widget</h1>
+        <button id="sendButton">Send Event to Server</button>
+    </div>
+
+    <script>
+        // Connect to the Socket.IO server
+        const socket = io('http://localhost:3000');
+
+        // Send event to the server when the button is clicked
+        const sendButton = document.getElementById('sendButton');
+        sendButton.addEventListener('click', () => {
+            const eventData = { message: 'Hello from the widget!' };
+            socket.emit('widgetEvent', eventData);
+        });
+
+        // Handle incoming events from the server
+        socket.on('serverEvent', (data) => {
+            console.log('Received data from server:', data);
+        });
+    </script>
+</body>
+
+</html>
